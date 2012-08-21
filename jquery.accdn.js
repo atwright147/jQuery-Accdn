@@ -4,9 +4,11 @@
 
 		// Create some defaults, extending them with any options that were provided
 		var settings = $.extend({
-			'open_class'   : 'open',
-			'closed_class' : 'closed',
-			'cursor'       : 'pointer',
+			'open_class'	: 'open',
+			'closed_class'	: 'closed',
+			'cursor'		: 'pointer',
+			'hash'			: false,
+			'first_only'	: false
 		}, options);
 
 		var o = settings;
@@ -14,15 +16,26 @@
 
 		return this.each(function() {
 
+			var n = 1;
 			$dt = $(this).find('dt');
 			$dd = $(this).find('dd');
 
 			$dd.each(function() {
 				$this = $(this);
+
 				if( ! $this.prev().hasClass(o.open_class)) {
-					$this.hide();
+ 					$this.hide();
 					$this.prev().addClass(o.closed_class);
 				}
+
+				if(o.first_only && n == 1) {
+					$this.show();
+					$this.prev().removeClass(o.closed_class).addClass(o.open_class);
+				} else {
+					$this.hide();
+					$this.prev().removeClass(o.open_class).addClass(o.closed_class);
+				}
+				n++;
 			});
 			$dt.click(function(e) {
 				$this = $(this);
