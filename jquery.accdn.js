@@ -29,27 +29,26 @@
 
 					case 'first':
 						console.log('switch first');
+						if(n == 1) {
+							$this.show();
+							$this.prev().removeClass(o.closed_class).addClass(o.open_class);
+						} else {
+							$this.hide();
+							$this.prev().removeClass(o.open_class).addClass(o.closed_class);
+						}
+						n++;
 						break;
 
 					case 'class':
 					default:
 						console.log('class / default');
+						if( ! $this.prev().hasClass(o.open_class)) {
+		 					$this.hide();
+							$this.prev().addClass(o.closed_class);
+						}
 						break;
 				}
 
-				if( ! $this.prev().hasClass(o.open_class)) {
- 					$this.hide();
-					$this.prev().addClass(o.closed_class);
-				}
-
-				if(o.first_only && n == 1) {
-					$this.show();
-					$this.prev().removeClass(o.closed_class).addClass(o.open_class);
-				} else {
-					$this.hide();
-					$this.prev().removeClass(o.open_class).addClass(o.closed_class);
-				}
-				n++;
 			});
 			$dt.click(function(e) {
 				$this = $(this);
