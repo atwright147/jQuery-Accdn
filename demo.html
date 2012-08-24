@@ -18,14 +18,16 @@
 	<script type="text/javascript" src="jquery.accdn.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('.js-accordion').accdn();
+			$('#class.js-accordion').accdn({'mode': 'class'});
+			$('#first.js-accordion').accdn({'mode': 'first'});
+			$('#hash.js-accordion').accdn({'mode': 'hash'});
 		});
 	</script>
 </head>
 <body>
-	<h1>Simple Accordion Demo</h1>
+	<h1>Simple Accordion Demo based on Option: CLASS (Default)</h1>
 	<h2>First Accordion</h2>
-	<dl class="js-accordion faq">
+	<dl class="js-accordion faq" id="class">
 		<dt>Accordion Title</dt>
 			<dd>Lorem ipsum dolor sit amet.</dd>
 		<dt class="open">Accordion Title</dt>
@@ -38,21 +40,27 @@
 			<dd>Lorem ipsum dolor sit amet.</dd>
 	</dl>
 	<hr>
-	<h2>Second Accordion</h2>
-	<dl class="js-accordion faq">
-		<dt class="open">Accordion Title</dt>
-			<dd>Lorem ipsum dolor sit amet.</dd>
-		<dt>Accordion Title</dt>
-			<dd>Lorem ipsum dolor sit amet.</dd>
-		<dt>Accordion Title</dt>
-			<dd>Lorem ipsum dolor sit amet.</dd>
-		<dt>Accordion Title</dt>
-			<dd>Lorem ipsum dolor sit amet.</dd>
+	<h2>Second Accordion based on Option: FIRST</h2>
+	<dl class="js-accordion faq" id="first">
 		<dt>Accordion Title</dt>
 			<dd>Lorem ipsum dolor sit amet.</dd>
 		<dt>Accordion Title</dt>
 			<dd>Lorem ipsum dolor sit amet.</dd>
 		<dt class="open">Accordion Title</dt>
+			<dd>Lorem ipsum dolor sit amet.</dd>
+		<dt>Accordion Title</dt>
+			<dd>Lorem ipsum dolor sit amet.</dd>
+		<dt class="open">Accordion Title</dt>
+			<dd>Lorem ipsum dolor sit amet.</dd>
+	</dl>
+	<hr>
+	<h2>Second Accordion based on Option: HASH</h2>
+	<dl class="js-accordion faq" id="hash">
+		<dt>Accordion Title</dt>
+			<dd>Lorem ipsum dolor sit amet.</dd>
+		<dt>Accordion Title</dt>
+			<dd>Lorem ipsum dolor sit amet.</dd>
+		<dt>Accordion Title</dt>
 			<dd>Lorem ipsum dolor sit amet.</dd>
 	</dl>
 </body>
