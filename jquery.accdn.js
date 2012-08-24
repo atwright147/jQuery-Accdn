@@ -7,8 +7,7 @@
 			'open_class'	: 'open',
 			'closed_class'	: 'closed',
 			'cursor'		: 'pointer',
-			'hash'			: false,
-			'first_only'	: false
+			'mode'			: 'class'  // class, hash, first
 		}, options);
 
 		var o = settings;
@@ -22,6 +21,21 @@
 
 			$dd.each(function() {
 				$this = $(this);
+
+				switch(o.mode) {
+					case 'hash':
+						console.log('switch hash');
+						break;
+
+					case 'first':
+						console.log('switch first');
+						break;
+
+					case 'class':
+					default:
+						console.log('class / default');
+						break;
+				}
 
 				if( ! $this.prev().hasClass(o.open_class)) {
  					$this.hide();
