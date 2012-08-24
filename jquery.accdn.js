@@ -24,7 +24,14 @@
 
 				switch(o.mode) {
 					case 'hash':
+						url_hash = location.hash.replace('#','');
 						console.log('switch hash');
+						if( ! $this.prev().hasClass(url_hash)) {
+		 					$this.hide();
+							$this.prev().addClass(o.closed_class);
+						} else {
+							$this.prev().addClass(o.open_class);
+						}
 						break;
 
 					case 'first':
