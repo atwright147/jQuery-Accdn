@@ -7,12 +7,13 @@
 			'open_class'	: 'open',
 			'closed_class'	: 'closed',
 			'cursor'		: 'pointer',
-			'hash'			: false,
-			'first_only'	: false
+			'speed'			: 'fast',
+			'easing'		: 'linear',
+			'mode'			: 'class'  // class, hash, first
 		}, options);
 
 		var o = settings;
-		console.log(settings);
+		//console.debug(settings);
 
 		return this.each(function() {
 
@@ -23,23 +24,44 @@
 			$dd.each(function() {
 				$this = $(this);
 
-				if( ! $this.prev().hasClass(o.open_class)) {
- 					$this.hide();
-					$this.prev().addClass(o.closed_class);
+				switch(o.mode) {
+					case 'hash':
+						url_hash = location.hash.replace('#','');
+						//console.debug('switch hash');
+						if( ! $this.prev().hasClass(url_hash)) {
+		 					$this.hide();
+							$this.prev().addClass(o.closed_class);
+						} else {
+							$this.prev().addClass(o.open_class);
+						}
+						break;
+
+					case 'first':
+						//console.debug('switch first');
+						if(n == 1) {
+							$this.show();
+							$this.prev().removeClass(o.closed_class).addClass(o.open_class);
+						} else {
+							$this.hide();
+							$this.prev().removeClass(o.open_class).addClass(o.closed_class);
+						}
+						n++;
+						break;
+
+					case 'class':
+					default:
+						//console.debug('class / default');
+						if( ! $this.prev().hasClass(o.open_class)) {
+		 					$this.hide();
+							$this.prev().addClass(o.closed_class);
+						}
+						break;
 				}
 
-				if(o.first_only && n == 1) {
-					$this.show();
-					$this.prev().removeClass(o.closed_class).addClass(o.open_class);
-				} else {
-					$this.hide();
-					$this.prev().removeClass(o.open_class).addClass(o.closed_class);
-				}
-				n++;
 			});
 			$dt.click(function(e) {
 				$this = $(this);
-				$this.next().slideToggle(function() {
+				$this.next().slideToggle(o.speed, o.easing, function() {
 					$this = $(this);
 					if($this.is(':visible')) {
 						$this.prev().addClass(o.open_class).removeClass(o.closed_class);
