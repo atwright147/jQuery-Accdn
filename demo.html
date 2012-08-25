@@ -15,10 +15,15 @@
 		}
 	</style>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 	<script type="text/javascript" src="jquery.accdn.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			$('#class.js-accordion').accdn({'mode': 'class'});
+			$('#class.js-accordion').accdn({
+				'mode':   'class',
+				'speed':  'slow',
+				'easing': 'easeOutBounce'
+			});
 			$('#first.js-accordion').accdn({'mode': 'first'});
 			$('#hash.js-accordion').accdn({'mode': 'hash'});
 		});
@@ -29,7 +34,7 @@
 	<h2>First Accordion</h2>
 	<dl class="js-accordion faq" id="class">
 		<dt>Accordion Title</dt>
-			<dd>Lorem ipsum dolor sit amet.</dd>
+			<dd>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</dd>
 		<dt class="open">Accordion Title</dt>
 			<dd>Lorem ipsum dolor sit amet.</dd>
 		<dt>Accordion Title</dt>
@@ -56,11 +61,11 @@
 	<hr>
 	<h2>Second Accordion based on Option: HASH</h2>
 	<dl class="js-accordion faq" id="hash">
-		<dt>Accordion Title</dt>
+		<dt class="multihash">Accordion Title</dt>
 			<dd>Lorem ipsum dolor sit amet.</dd>
 		<dt class="hashified">Accordion Title</dt>
 			<dd>Lorem ipsum dolor sit amet.</dd>
-		<dt>Accordion Title</dt>
+		<dt class="multihash">Accordion Title</dt>
 			<dd>Lorem ipsum dolor sit amet.</dd>
 	</dl>
 </body>
