@@ -37,17 +37,25 @@ Create a jQuery selector to select the markup:
 
 ## Options
 
+### Open CSS Class
+
     open_class: 'open'
 
 Define the CSS class to apply to open accordion `<dt>`s. This also changes which CSS class the plugin looks for to leave accordion sections open when initialising. Default: `open`.
+
+### Closed CSS Class
 
     closed_class: 'closed'
 
 See open_class above. Default: `closed`.
 
+### Mouse Cursor for Headers
+
     cursor: 'pointer'
 
 Define the CSS cursor to show when hovering over each accordion headet (`<dt>`). Default: `pointer`.
+
+### Animation Speed (for opening and closing)
 
     speed: 'fast'
     speed: 'slow'
@@ -55,9 +63,13 @@ Define the CSS cursor to show when hovering over each accordion headet (`<dt>`).
 
 Define the speed at which accordion sections should open and close. Default: `fast` (internal jQuery alias for 800ms).
 
+### Easing
+
     easing: 'linear'
 
 Define the easing style to use when opening and closing accordion sections. Set to any valid easing name from the jQuery UI or Easing Library. You must also include the appropriate easing library *before* Default: `false`.
+
+### Mode (choose what gets opened by default)
 
     mode: 'class'
     mode: 'first'
@@ -66,7 +78,7 @@ Define the easing style to use when opening and closing accordion sections. Set 
 Define how the accordion plugin should behave. 
 - If set to `class`, the plugin will leave the `<dd>` a `<dt>` with a CSS class equal to `open_class` open and close all others. If no `<dt>` has this class, all `<dd>` will be closed.
 - If set to `first`, oly the first accordion section of any selected `<dl>` will be opened (ignoring and item with the `open_class` added to it).
-- If set to `hash`, the plugin will open any accordion section with a CSS class applied to it that matches the URL hash tag (e.g. `http://example.com*#faq2*`) would result in all accordion sections with the CSS class `faq2` applied starting out open.
+- If set to `hash`, the plugin will open any accordion section with a CSS class applied to it that matches the URL hash tag (e.g. `http://example.com#faq2`) would result in all accordion sections with the CSS class `faq2` applied starting out open.
 
 ## Development
 
