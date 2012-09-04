@@ -1,3 +1,12 @@
+/*!
+* jQuery Plugin v1.0.1
+* https://github.com/atwright147/jquery-accdn
+*
+* Copyright 2012, Andy Wright
+* Dual licensed under the MIT or GPL Version 2 licenses.
+* http://www.opensource.org/licenses/mit-license.php
+* http://www.opensource.org/licenses/GPL-2.0
+*/
 (function($){
 
 	$.fn.accdn = function(options) {  
