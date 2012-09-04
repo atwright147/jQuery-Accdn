@@ -36,9 +36,9 @@
 						//console.debug('switch hash');
 						if( ! $this.prev().hasClass(url_hash)) {
 		 					$this.hide();
-							$this.prev().addClass(o.closed_class);
+							$this.prev().switchClass(o.closed_class, o.open_class);
 						} else {
-							$this.prev().addClass(o.open_class);
+							$this.prev().switchClass(o.open_class, o.closed_class);
 						}
 						break;
 
