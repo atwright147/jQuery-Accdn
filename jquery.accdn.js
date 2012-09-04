@@ -15,6 +15,12 @@
 		var o = settings;
 		//console.debug(settings);
 
+		// FROM: https://groups.google.com/forum/?fromgroups=#!topic/jquery-en/BdTg8J6HwRI
+		$.fn.switchClass = function(a, b){
+			var t = $(this).hasClass(a);
+			$(this).addClass( t ? b : a ).removeClass( t ? a : b );
+		}
+
 		return this.each(function() {
 
 			var n = 1;
@@ -40,10 +46,10 @@
 						//console.debug('switch first');
 						if(n == 1) {
 							$this.show();
-							$this.prev().removeClass(o.closed_class).addClass(o.open_class);
+							$this.prev().switchClass(o.closed_class, o.open_class);
 						} else {
 							$this.hide();
-							$this.prev().removeClass(o.open_class).addClass(o.closed_class);
+							$this.prev().switchClass(o.open_class, o.closed_class);
 						}
 						n++;
 						break;
@@ -64,9 +70,9 @@
 				$this.next().slideToggle(o.speed, o.easing, function() {
 					$this = $(this);
 					if($this.is(':visible')) {
-						$this.prev().addClass(o.open_class).removeClass(o.closed_class);
+						$this.prev().switchClass(o.open_class, o.closed_class);
 					} else {
-						$this.prev().addClass(o.closed_class).removeClass(o.open_class);
+						$this.prev().switchClass(o.closed_class, o.open_class);
 					}
 				});
 				e.preventDefault();
