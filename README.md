@@ -80,6 +80,21 @@ Define how the accordion plugin should behave.
 - If set to `first`, oly the first accordion section of any selected `<dl>` will be opened (ignoring and item with the `open_class` added to it).
 - If set to `hash`, the plugin will open any accordion section with a CSS class applied to it that matches the URL hash tag (e.g. `http://example.com#faq2`) would result in all accordion sections with the CSS class `faq2` applied starting out open.
 
+## Tips and Tricks
+
+### Be more flexible
+
+What if I want to use the URL hash when one is set but otherwise use inline classes? Easy -- try the following snippet:
+
+    if(location.hash.length > 0) {
+        mode = 'hash';
+    } else {
+        mode = 'class';
+    }
+    $('<selector>').accdn({'mode': mode});
+
+Basically, this checks if a url hash has been set `if(location.hash.length > 0)` then based on this sets the `mode`. This `mode` is then passed to the script initiator. Have fun...
+
 ## Development
 
 - Source hosted at [GitHub](https://github.com/atwright147/jquery-accdn)

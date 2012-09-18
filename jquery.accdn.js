@@ -1,4 +1,4 @@
-/*!
+/*
 * jQuery Plugin v1.0.1
 * https://github.com/atwright147/jquery-accdn
 *
@@ -23,14 +23,6 @@
 
 		var o = settings;
 		//console.debug(settings);
-
-		// FROM: https://groups.google.com/forum/?fromgroups=#!topic/jquery-en/BdTg8J6HwRI
-		/*
-		$.fn.switchClass = function(a, b){
-			var t = $(this).hasClass(a);
-			$(this).addClass( t ? b : a ).removeClass( t ? a : b );
-		}
-		*/
 
 		return this.each(function() {
 
