@@ -1,3 +1,12 @@
+/*
+* jQuery Plugin v1.0.2
+* https://github.com/atwright147/jquery-accdn
+*
+* Copyright 2012, Andy Wright
+* Dual licensed under the MIT or GPL Version 2 licenses.
+* http://www.opensource.org/licenses/mit-license.php
+* http://www.opensource.org/licenses/GPL-2.0
+*/
 (function($){
 
 	$.fn.accdn = function(options) {  
@@ -30,9 +39,9 @@
 						//console.debug('switch hash');
 						if( ! $this.prev().hasClass(url_hash)) {
 		 					$this.hide();
-							$this.prev().addClass(o.closed_class);
+							$this.prev().removeClass(o.open_class).addClass(o.closed_class);
 						} else {
-							$this.prev().addClass(o.open_class);
+							$this.prev().addClass(o.closed_class).removeClass(o.open_class);
 						}
 						break;
 
@@ -64,9 +73,9 @@
 				$this.next().slideToggle(o.speed, o.easing, function() {
 					$this = $(this);
 					if($this.is(':visible')) {
-						$this.prev().addClass(o.open_class).removeClass(o.closed_class);
+						$this.prev().removeClass(o.closed_class).addClass(o.open_class);
 					} else {
-						$this.prev().addClass(o.closed_class).removeClass(o.open_class);
+						$this.prev().removeClass(o.open_class).addClass(o.closed_class);
 					}
 				});
 				e.preventDefault();
