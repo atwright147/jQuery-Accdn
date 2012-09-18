@@ -1,5 +1,5 @@
 /*
-* jQuery Plugin v1.0.1
+* jQuery Plugin v1.0.2
 * https://github.com/atwright147/jquery-accdn
 *
 * Copyright 2012, Andy Wright
