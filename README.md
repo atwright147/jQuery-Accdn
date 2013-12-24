@@ -107,3 +107,5 @@ Pull requests are very welcome! Make sure your patches are well tested. Please c
 [Andy Wright](https://github.com/atwright147)
 
 *This readme is based on the readme by carhartl for his jquery-cookie plugin*
+
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/fa69df848b1e29f388925c9b673f72e6 "githalytics.com")](http://githalytics.com/atwright147/jQuery-Accdn)
